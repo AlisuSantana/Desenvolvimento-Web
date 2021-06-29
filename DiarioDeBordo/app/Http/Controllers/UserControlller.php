@@ -31,8 +31,9 @@ class UserControlller extends Controller
     public function index()
     {
         if(!Session::has('login')){ return redirect( route('checkSession') ); }
-        
-        return view('home');     
+
+        $user = $this->objUser->find(Session::get('id'));        
+        return view('home', compact('user'));     
     }
 
     /**
