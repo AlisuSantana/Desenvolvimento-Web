@@ -13,6 +13,7 @@
 
   {{-- sidebar page start --}}
   @section('nav-menu')
+      @php $setting = 'nav-active' @endphp        
       @parent
   @stop    
   {{-- sidebar page end --}}

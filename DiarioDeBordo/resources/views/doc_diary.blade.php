@@ -13,7 +13,8 @@
 
   {{-- sidebar page start --}}
   @section('nav-menu')
-      @parent
+      @php $docDiary = 'nav-active' @endphp
+      @parent      
   @stop    
   {{-- sidebar page end --}}
 

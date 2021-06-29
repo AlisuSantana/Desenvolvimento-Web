@@ -13,12 +13,13 @@
 
   {{-- sidebar page start --}}
   @section('nav-menu')
+      @php $project = 'nav-active' @endphp   
       @parent
   @stop    
   {{-- sidebar page end --}}
 
   {{-- wrapper main page start --}}
-  @section('main_content-start')
+  @section('main_content-start')           
       @parent
   @stop
       

@@ -23,33 +23,33 @@
                     <img class="img-fluid rounded " src="{{ asset('assets/img/logo_diariodebordo_vetorizada.png') }}" alt="LOGO" width="180">
                 </div>
                 <ul class="list-inline ps-0" >
-                    <li>
-                        <a class="d-block text-white text-decoration-none" href="{{ route('home.index') }}">
+                    <li class="@php echo $home ?? '' @endphp">
+                        <a class=" d-block text-white text-decoration-none" href="{{ route('home.index') }}">
                             <i class="pe-3 fas fa-home fa-lg"></i>Home
                         </a>
                     </li>
-                    <li>
-                        <a class="d-block text-white text-decoration-none" href=" {{ route('diary.create') }} ">                    
+                    <li class="@php echo $docDiary ?? '' @endphp ">
+                        <a class=" d-block text-white text-decoration-none" href=" {{ route('diary.create') }} ">                    
                             <i class="pe-3 fas fa-user fa-lg"></i>Documentar no diário
                         </a>
                     </li>
-                    <li>
-                        <a class="d-block text-white text-decoration-none" href=" {{ route('project.show', ['id'=>Session::get('id') ?? "id"]) }} ">
+                    <li class="@php echo $project ??  '' @endphp">
+                        <a class=" d-block text-white text-decoration-none" href=" {{ route('project.show', ['id'=>Session::get('id') ?? "id"]) }} ">
                             <i class="pe-3 fas fa-address-card fa-lg"></i>Projetos
                         </a>
                     </li>
-                    <li>
-                        <a class="d-block text-white text-decoration-none" href="{{ route('historic_diary.historicDiary', ['id' => Session::get('id') ?? "id"]) }}">
+                    <li class="@php echo $hisDiary ?? '' @endphp">
+                        <a class=" d-block text-white text-decoration-none" href="{{ route('historic_diary.historicDiary', ['id' => Session::get('id') ?? "id"]) }}">
                             <i class="pe-3 fas fa-address-book fa-lg"></i>Histórico de diário
                         </a>
                     </li>
-                    <li>
-                        <a class="d-block text-white text-decoration-none" href=" {{ route('settings.show', ['id'=>Session::get('id') ?? "id" ]) }} ">
+                    <li class="@php echo $setting  ?? '' @endphp">
+                        <a class=" d-block text-white text-decoration-none" href=" {{ route('settings.show', ['id'=>Session::get('id') ?? "id" ]) }} ">
                             <i class="pe-3 fas fa-project-diagram fa-lg"></i>Configurações
                         </a>
                     </li>
                     <li>
-                        <a class="d-block text-white text-decoration-none" href=" {{ route('logout.logout') }} ">
+                        <a class=" d-block text-white text-decoration-none" href=" {{ route('logout.logout') }} ">
                             <i class="pe-3 fas fa-door-open fa-lg"></i>Sair
                         </a>
                     </li>

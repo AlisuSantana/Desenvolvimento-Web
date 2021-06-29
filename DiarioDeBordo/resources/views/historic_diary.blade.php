@@ -13,6 +13,7 @@
 
   {{-- sidebar page start --}}
   @section('nav-menu')
+      @php $hisDiary = 'nav-active' @endphp
       @parent
   @stop    
   {{-- sidebar page end --}}

@@ -12,6 +12,7 @@
 
 {{-- sidebar page start --}}
     @section('nav-menu')
+        @php $home = 'nav-active' @endphp        
         @parent
     @stop    
 {{-- sidebar page end --}}
