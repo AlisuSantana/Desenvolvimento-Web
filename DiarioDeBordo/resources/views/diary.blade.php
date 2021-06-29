@@ -29,7 +29,7 @@
         <div class="row">
             <div class="shadow-lg col-lg-8 col-sm-12 m-auto bg-light pt-4 pb-5 rounded">
 
-                <p class="text-center fs-3 bg-my-secondary shadow-lg py-3"> {{ $name_project }} </p>
+                <p class="text-center fs-3 bg-my-secondary shadow-sm py-3"> {{ $name_project }} </p>
 
                 <div class="mt-4 d-flex justify-content-end px-3">
                    <strong class="me-1">Entrega:</strong> {{ $diary->dt_diary }}
