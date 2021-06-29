@@ -13,11 +13,9 @@ use App\Http\Requests\Update_emailUserRequest;
 use App\Http\Requests\Update_email_contactUserRequest;
 use App\Http\Requests\Update_passwordUserRequest;
 
-
 class UserControlller extends Controller
 {
     private $objUser;
-
     public function __construct()
     {
         $this->objUser = new UserModel();
@@ -32,8 +30,10 @@ class UserControlller extends Controller
     {
         if(!Session::has('login')){ return redirect( route('checkSession') ); }
 
-        $user = $this->objUser->find(Session::get('id'));        
-        return view('home', compact('user'));     
+        $user = $this->objUser->find(Session::get('id'));       
+        $reminders = $user->reminders()->get();
+        
+        return view('home', compact('user', 'reminders'));     
     }
 
     /**

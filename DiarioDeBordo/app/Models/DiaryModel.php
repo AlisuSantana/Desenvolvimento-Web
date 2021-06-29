@@ -19,7 +19,7 @@ class DiaryModel extends Model
     ];
 
     public function project(){
-        return $this->belongsTo(ProjetctModel::class, 'cd_project', 'cd_project')->withTimestamps();
+        return $this->belongsTo(ProjetctModel::class, 'cd_project', 'cd_project');
     } 
 }
 

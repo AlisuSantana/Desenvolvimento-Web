@@ -5,7 +5,8 @@ use App\Http\Controllers\{
     UserControlller,
     LoginController,
     DiaryController,
-    ProjectController
+    ProjectController,
+    ReminderController
 };
 
 /*
@@ -50,5 +51,5 @@ Route::delete('/projetc/{id}',[ProjectController::class, 'destroy'])->name('proj
 Route::get('/projetc/{project_id}/edit',[ProjectController::class, 'edit'])->name('project.edit'); // view editar projeto
 Route::put('/projetc/{id}',[ProjectController::class, 'update'])->name('project.update'); // editar projeto
 
-
-  
+Route::delete('/reminder/{id}',[ReminderController::class, 'destroy'])->name('reminder.destroy');
+Route::post('/reminder',[ReminderController::class, 'store'])->name('reminder.store'); // criar um lembrete

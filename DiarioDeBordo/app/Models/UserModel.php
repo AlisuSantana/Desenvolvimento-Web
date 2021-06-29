@@ -14,6 +14,10 @@ class UserModel extends Model
         return $this->belongsToMany(ProjetctModel::class, 'tb_user_project', 'cd_user', 'cd_project')->withTimestamps();
     }
 
+    public function reminders(){
+        return $this->hasMany(ReminderModel::class, 'cd_user', 'cd_user');
+    }
+
 }
 
 /*
