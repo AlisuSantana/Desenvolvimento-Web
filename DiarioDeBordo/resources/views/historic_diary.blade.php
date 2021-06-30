@@ -26,7 +26,8 @@
   
     {{-- main page start --}}
     @section('content')
-      <table class="table table-hover table-info ">
+    <div class="m-2">
+      <table class="table table-hover table-info">
         <thead>
           <tr>
             <th scope="col">Projeto</th>
@@ -46,6 +47,7 @@
               </tbody>
         @endforeach
       </table>
+    </div>
     @stop
     {{-- main page end --}}
 

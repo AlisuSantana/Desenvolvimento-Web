@@ -60,7 +60,7 @@
 
     @section('main_content-start')
         <div class="main_content">
-            <div class="info m-4">
+            <div class="info">
     @show
        
         @yield('content') 

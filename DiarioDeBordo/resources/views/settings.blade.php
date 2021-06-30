@@ -27,6 +27,7 @@
     {{-- main page start --}}
     @section('content')
 
+    <div class="m-4">
         <div class="card my-3 lead">
               <h4 class="card-header text-center py-3 fw-bold ">USUÁRIO</h4>  {{-- text-wrap--}}
               <div class="card-body">  
@@ -110,6 +111,8 @@
                 </div>
             </div>
         </div>
+
+      </div>
 
         <div id="modalEdit" class="modal " tabindex="-1">
             <div class="modal-dialog modal-dialog-centered">
