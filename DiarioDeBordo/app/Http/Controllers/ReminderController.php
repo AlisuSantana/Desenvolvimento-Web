@@ -17,6 +17,8 @@ class ReminderController extends Controller
 
     public function store(Request $request)
     {
+        if(!Session::has('login')){ return redirect( route('checkSession') ); }
+
        if(isset($request->reminder) && !empty($request->reminder)){
            $storeReminder = $this->objReminder->create([
                 'ds_reminder' => $request->reminder,
@@ -35,6 +37,8 @@ class ReminderController extends Controller
 
     public function destroy($id)
     {
+        if(!Session::has('login')){ return redirect( route('checkSession') ); }
+        
         $delReminder = $this->objReminder->destroy($id);
         if($delReminder){
             return response()->json([
