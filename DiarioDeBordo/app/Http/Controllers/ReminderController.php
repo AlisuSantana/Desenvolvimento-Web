@@ -35,10 +35,12 @@ class ReminderController extends Controller
 
     public function destroy($id)
     {
-        $this->objReminder->destroy($id);
-        return response()->json([
-            'success' => true
-        ]);
+        $delReminder = $this->objReminder->destroy($id);
+        if($delReminder){
+            return response()->json([
+                'success' => true
+            ]);
+        }
     }
 
 }

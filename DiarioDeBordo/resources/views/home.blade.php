@@ -32,12 +32,13 @@
                     <div class="card mb-3">
                         <div class="card-header py-3">Meus lembretes.. </div>
                         <div id="reminders" class="card-body">
+                           @csrf
                            @if ($reminders)
                             @foreach ($reminders as $reminder)
-                                <div id="reminder{{ $reminder->cd_reminder }}" class='p-1 m-0'>
+                                <div id="reminder{{$reminder->cd_reminder}}" class='p-1 m-0'>                                
                                     - {{ $reminder->ds_reminder }} 
-                                    <button id="{{$reminder->cd_reminder}}" type="submit" class='del-reminder ps-1 text-decoration-none border-0 rounded'> Excluir </button>
-                                </div>                                                            
+                                    <button id="{{$reminder->cd_reminder}}" type="submit" onclick="delReminder(this.id)" class='ps-1 text-decoration-none border-0 rounded'> Excluir </button>
+                                </div>
                             @endforeach       
                            @endif 
                         </div>
@@ -81,6 +82,7 @@
 {{-- wrapper ajax start --}}
 @section('scripts-ajax')
 <script>
+
   $("#form-reminder").bind('submit',function(event){
     event.preventDefault();
     $.ajax({
@@ -93,7 +95,7 @@
                 $('#reminders').append(
                     "<div id='reminder"+response.reminder_id+"' class='p-1 m-0'>" +
                         "- " + response.reminder +
-                        "<a id="+ response.reminder_id +" href='{{ route('reminder.destroy',['id'=>"+response.reminder_id+"]) }}' class='del-reminder ps-1 text-decoration-none'> Excluir </a>" +
+                        "<button id="+response.reminder_id+" type='submit' onclick='delReminder(this.id)' class='del-reminder ps-1 text-decoration-none border-0 rounded'> Excluir </button>" +
                     "</div>"  
                 );
             }else{                
@@ -111,10 +113,31 @@
     });
   });
 
-$(".del-reminder").on('click',function(){
-    let reminder_id = $(this).attr('id');
-    $("#reminder"+reminder_id).empty();
-})
+function delReminder(id){
+    let token = document.getElementsByName("_token")[0].value;
+    var route = "{{ route('reminder.destroy', ['id' => ':id' ]) }}";
+    route = route.replace(":id", id);
+    if(confirm('Deseja delete esse lembrete')){
+        $.ajax({
+            url: route,
+            type:'delete',
+            data:{
+                _token : token
+            },
+            success: function(response){
+                if(response.success === true){
+                    $("#reminder"+id).remove();
+                }
+            },
+            error:function(response){
+                console.log("Erro na conexão \n");
+                console.log(response);
+            }
+        })
+    }
+}
+
+
 </script>
 @stop
 {{-- wrapper ajax end --}}
