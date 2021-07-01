@@ -13,7 +13,7 @@
 
   {{-- sidebar page start --}}
   @section('nav-menu')
-      @php $project = 'nav-active' @endphp   
+      @php $application = 'nav-active' @endphp   
       @parent
   @stop    
   {{-- sidebar page end --}}

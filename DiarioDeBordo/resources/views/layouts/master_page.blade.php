@@ -33,7 +33,7 @@
                             <i class="pe-3 fas fa-user fa-lg"></i>Documentar no diário
                         </a>
                     </li>
-                    <li class="@php echo $project ??  '' @endphp">
+                    <li class="@php echo $application ??  '' @endphp">
                         <a class=" d-block text-white text-decoration-none" href=" {{ route('project.show', ['id'=>Session::get('id') ?? "id"]) }} ">
                             <i class="pe-3 fas fa-address-card fa-lg"></i>Projetos
                         </a>
