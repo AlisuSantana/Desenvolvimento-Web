@@ -6,10 +6,9 @@
 ## Ferramentas 
 1. Framework Laravel
 2. Css
-3. Javascript
+3. Javascript / Jquery
 4. Sass
 5. Bootstrap
-6. Jquery 
 
 
 ## Interface da aplicação
