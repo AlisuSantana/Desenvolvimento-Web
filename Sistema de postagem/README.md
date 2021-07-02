@@ -1,6 +1,6 @@
-# Código de Sistema de Postagem desenvolvido durante o técnco em Análise e Desenvolvimento de Sistemas
+## Código de Sistema de Postagem desenvolvido durante o técnco em Análise e Desenvolvimento de Sistemas
 
-## Ferramentas
+### Ferramentas
 
 1. php puro
 2. javascript/Jquery
