@@ -1,18 +1,17 @@
-# Bootstrap 4 + WordPress
-Arquivos da série de vídeos que vai te ensinar a criar seu primeiro tema de WordPress com Bootstrap 4.\
-**Assista todos os vídeos** [nesta playlist do YouTube](https://www.youtube.com/playlist?list=PLBbHLUbqqCrT1gBZtTminYijo8DVpPynE "nesta playlist do YouTube").
+## Bootstrap 4 + WordPress
 
-### O que você vai aprender
-- Instalar o Bootstrap 4 (com Sass e Gulp)
-- Criar um layout com Bootstrap 4
-- Transformar seu arquivo HTML em um tema de WordPress
-- Adicionar funcionalidades ao tema
-- Utilizar plugins úteis
-- Publicar o site
+### Interface da aplicação
 
-### Onde me encontrar
-- [Instagram](https://www.instagram.com/rvsanches/ "Instagram")
-- [Twitter](https://twitter.com/ricardovsanches "Twitter")
+#### Os menus da navbar são link internos do site.
 
-*Espero que este conhecimento te ajude a conseguir novas oportunidades.\
-Sucesso!*
+![1](https://user-images.githubusercontent.com/58946493/124211177-11614f80-dac3-11eb-9e0e-e625acec70a4.PNG)
+
+![2](https://user-images.githubusercontent.com/58946493/124211179-12927c80-dac3-11eb-88bf-add79c05d529.PNG)
+
+![3](https://user-images.githubusercontent.com/58946493/124211182-12927c80-dac3-11eb-8068-385e98d491a6.PNG)
+
+![4](https://user-images.githubusercontent.com/58946493/124211185-132b1300-dac3-11eb-8a94-a30c0e2c25ef.PNG)
+
+![5](https://user-images.githubusercontent.com/58946493/124211189-13c3a980-dac3-11eb-9d0f-c6a0512b4907.PNG)
+
+![6](https://user-images.githubusercontent.com/58946493/124211191-13c3a980-dac3-11eb-8a13-e2d2470f3b4f.PNG)
