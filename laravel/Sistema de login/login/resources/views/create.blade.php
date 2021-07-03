@@ -4,11 +4,11 @@
 
 @section('content')
 
-<h1 class="text-center mt-3 mb-3">Criar usuário</h1>
+<h1 class="text-center mt-3 mb-3 text-uppercase font-weight-bold text-white" >Criar usuário</h1>
 <hr>
 
 @if (isset($errors) && count($errors) > 0)
-    <div class="text-center mt-3 mb-3 p-3 alert-danger">
+    <div class="text-center mt-3 mb-3 p-3 alert-danger text-white">
         @foreach ($errors->all() as $error)
             {{$error}} <br>
         @endforeach
@@ -16,13 +16,12 @@
 @endif
 
 @if (session('erro_db'))
-    <div class="alert alert-danger">
+    <div class="alert alert-danger text-white">
         <p> {{session('erro_db')}} </p>
     </div>
 @endif
 
-<hr>
-<div class="col-4 m-auto">
+<div class="col-4 m-auto bg-light p-3 rounded shadow-lg ">
     <form name="form_createUsuario" id="form_createUsuario" method="post" action="{{url('login')}}">
         @csrf
 

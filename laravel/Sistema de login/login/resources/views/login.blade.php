@@ -4,11 +4,11 @@
 
 @section('content')
 
-<h1 class="text-center mt-3 mb-3">Login</h1>
+<h1 class="text-center mt-3 mb-3 text-white text-uppercase font-weight-bold">Entre</h1>
 <hr>
 
 @if (isset($errors) && count($errors) > 0)
-    <div class="text-center mt-3 mb-3 p-3 alert-danger">
+    <div class="text-center mt-3 mb-3 p-3 alert-danger text-white">
         @foreach ($errors->all() as $error)
             {{$error}} <br>
         @endforeach
@@ -16,19 +16,18 @@
 @endif
 
 @if (session('erro_db'))
-    <div class="alert alert-danger">
+    <div class="alert alert-danger text-white">
         <p> {{session('erro_db')}} </p>
     </div>
 @endif
 
 @if (session('mensagem'))
-    <div class="alert alert-success">
+    <div class="alert alert-success text-white">
         <p> {{session('mensagem')}} </p>
     </div>
 @endif
 
-<hr>
-<div class="col-4 m-auto">
+<div class="col-4 m-auto  bg-light p-3 rounded shadow-lg">
     <form name="form_login" id="form_login" method="post" action="{{url('login/efetuaLogin')}}">
         @csrf
         <div class="form-group">

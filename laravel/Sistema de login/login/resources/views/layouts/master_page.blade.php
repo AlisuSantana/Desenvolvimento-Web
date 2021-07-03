@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="{{url('assets\bootstrap-4-4-1\css\bootstrap.min.css')}}">
     <title>@yield('title')</title>
 </head>
-<body>
+<body class="bg-info m-auto">
     <main class="container">
         @yield('content')
     </main>    
