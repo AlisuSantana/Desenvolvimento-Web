@@ -14,20 +14,20 @@
     </head>
 
     <main>
-        @section('content')]
+        @section('content')
 
-        <h1 class="text-center mt-3 mb-3">Menu - home</h1>
-        <hr>
-        <div class="text-center mt-2 mb-2">
-            <a href="{{url('departamento')}}">
-                <button class="btn btn-success">Departamento</button>
-            </a>
-        </div>
-        <div class="text-center mt-2 mb-2">
-            <a href="{{url('funcionario')}}">
-                <button class="btn btn-primary">Funcionário</button>
-            </a>
-        </div>
+            <div class="d-flex justify-content-center aligh-items-center">
+                <div class="text-center mt-2 mb-2 p-5">
+                    <a href="{{url('departamento')}}">
+                        <button class="btn btn-success">Departamento</button>
+                    </a>
+                </div>
+                <div class="text-center mt-2 mb-2 p-5">
+                    <a href="{{url('funcionario')}}">
+                        <button class="btn btn-primary">Funcionário</button>
+                    </a>
+                </div>
+            </div>
 
         @show
     </main>
