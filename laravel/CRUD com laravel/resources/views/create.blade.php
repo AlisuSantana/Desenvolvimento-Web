@@ -2,9 +2,6 @@
 
 @section('title', 'Cadastro de aluno')
 
-@section('head')
-@parent    
-@stop
 
 @section('content')
 

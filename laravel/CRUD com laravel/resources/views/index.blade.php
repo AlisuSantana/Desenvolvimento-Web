@@ -2,16 +2,12 @@
 
 @section('title', 'aluno')
 
-@section('head')
-    @parent    
-@stop
 
 @section('content')
     
     <h1 class="text-center">CRUD COM LARAVEL</h1>
-    <hr>
     @if (session('mensagem'))
-        <div class="alert alert-success">
+        <div class="alert alert-success text-center">
             <p> {{session('mensagem')}} </p>
         </div>        
     @endif
@@ -57,7 +53,7 @@
         <a href="{{url('aluno/create')}}"> <button class="btn btn-primary">Cadastrar aluno</button> </a>
     </div>
     
-    <br><hr>
+    <br>
 
 @stop
 

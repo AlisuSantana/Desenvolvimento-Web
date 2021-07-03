@@ -2,10 +2,6 @@
 
 @section('title', 'show - {{$aluno->cd_aluno}}')
 
-@section('head')
-    @parent
-@endsection
-
 @section('content')
     <h1 class="text-center"> Visualização do registro de aluno: </h1>
     <hr>
