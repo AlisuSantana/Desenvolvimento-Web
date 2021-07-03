@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-      <main class="row">
+      <main class="row p-2">
         <div class="col-md-8 col-sm-12">
 
           <?php if(have_posts()) : while(have_posts()) : the_post(); ?>
