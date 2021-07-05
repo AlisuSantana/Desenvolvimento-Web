@@ -1,7 +1,9 @@
 
  # Gerenciador de Diário de Brodo
  
- Site para gerenciar seu **Diário De Bordo**. Totalmente dinâmico e prático de usar.
+ ### Site para gerenciar seu **Diário De Bordo**. Totalmente dinâmico e prático de usar.
+Ao criar uma conta, o usuário poderá criar um projeto para pode preencher e enviar um documento de diário de bordo
+com algumas perguntas sobre o andamento do seu projeto. A aplicação trabalha com envio do documento de diário de bordo para um Email especificado pelo usuário ao criar o projeto. Caso o usuário tenha mais de um projeto em aberto, ele poderá especificar qual projeto o documento pertencer no preenchimento do diário. O usuário poderá ter acesso a todo o histórico de envio de diário de bordo, juntamente com a visualização do documento.
 
 ## Ferramentas 
 1. Framework Laravel
