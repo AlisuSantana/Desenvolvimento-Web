@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Mail;
 use App\Mail\DiaryMail;
 use Illuminate\Support\Facades\DB;
 
-use PDF;
+use Barryvdh\DomPDF\PDF;
 
 class DiaryController extends Controller
 {
@@ -76,7 +76,17 @@ class DiaryController extends Controller
             'cd_project' => $request->Project_id
         ]);
 
-        if($storeDiary){  
+        $diaryQuerys = DB::table('tb_diary')
+        ->join('tb_project', 'tb_project.cd_project', '=', 'tb_diary.cd_project')
+        ->select('tb_diary.*','tb_project.nm_project')
+        ->where('tb_diary.cd_diary', '=', $storeDiary->cd_diary)
+        ->get();
+        
+        $project = $this->objProject->find($request->Project_id);
+        $email = $project->nm_email_recipient;
+
+        if($storeDiary){          
+            Mail::to($email)->send(new DiaryMail($diaryQuerys));
             return redirect(route('diary.create'))->with('msg', 'Diario de bordo enviado com sucesso!');
         }
         
