@@ -29,10 +29,11 @@
     <div class="m-2">
       <table class="table table-hover table-info">
         <thead>
-          <tr>
+          <tr style="color: rgb(37, 108, 242)">
             <th scope="col">Projeto</th>
             <th scope="col">Enviado</th>
             <th scope="col">Data</th>
+            <th scope="col">Pdf</th>
             <th scope="col">Diário</th>
           </tr>
         </thead>
@@ -42,6 +43,7 @@
                   <th scope="row"> {{ $dataQuery->nm_project }}  </th>
                   <td>  {{ $dataQuery->nm_email_recipient }} </td>
                   <td>  {{ $dataQuery->dt_diary }} </td>
+                  <td>  <a class="text-decoration-none" href="{{ route('diary-pdf.generationPDF', ['diary_id' => $dataQuery->cd_diary]) }}">Download</a> </td>
                   <td>  <a class="text-decoration-none" href="{{ route('diary.show', ['diary_id' => $dataQuery->cd_diary]) }}">Visualizar</a> </td>
                 </tr>
               </tbody>

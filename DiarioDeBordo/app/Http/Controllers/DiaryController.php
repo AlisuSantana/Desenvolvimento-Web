@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Mail;
 use App\Mail\DiaryMail;
 use Illuminate\Support\Facades\DB;
 
-use App\Classes\GeneratorPDF;
+use PDF;
 
 class DiaryController extends Controller
 {
@@ -76,15 +76,8 @@ class DiaryController extends Controller
             'cd_project' => $request->Project_id
         ]);
 
-        if($storeDiary){                    
-        //  $dataDiaryQuerys = DB::table('tb_diary')
-        // ->join('tb_project', 'tb_project.cd_project', '=', 'tb_diary.cd_project')
-        // ->select('tb_diary.*','tb_project.nm_project')
-        // ->where('tb_diary.cd_diary', '=', $storeDiary->cd_diary)
-        // ->get();
-        // $project = $this->objProject->find($request->Project_id);
-
-        return redirect(route('diary.create'))->with('msg', 'Diario de bordo enviado com sucesso!');
+        if($storeDiary){  
+            return redirect(route('diary.create'))->with('msg', 'Diario de bordo enviado com sucesso!');
         }
         
     }
@@ -119,6 +112,39 @@ class DiaryController extends Controller
         ->get();
 
         return view('historic_diary', compact('dataQuerys'));
+    }
+
+    public function generationPDF($diary_id)
+    {
+        if(!Session::has('login')){ return redirect( route('checkSession') ); }
+
+        $dataQuerys = DB::table('tb_user_project')
+        ->join('tb_user', 'tb_user.cd_user', '=', 'tb_user_project.cd_user')
+        ->join('tb_project', 'tb_project.cd_project', '=', 'tb_user_project.cd_project')
+        ->join('tb_diary', 'tb_diary.cd_project', '=', 'tb_project.cd_project')
+        ->select('tb_project.cd_project','tb_user.cd_user', 'tb_diary.cd_diary')
+        ->where('tb_user.cd_user', '=', Session::get('id'))
+        ->orWhere('tb_diary.cd_diary', '=', $diary_id)
+        ->get();
+
+        if(!$dataQuerys){
+            return redirect( route('historic_diary.historicDiary',['id' => Session::get('id')])); 
+        }
+
+        $dataDiaryQuerys = DB::table('tb_diary')
+        ->join('tb_project', 'tb_project.cd_project', '=', 'tb_diary.cd_project')
+        ->select('tb_diary.*','tb_project.nm_project')
+        ->where('tb_diary.cd_diary', '=', $diary_id)
+        ->get();
+
+        $pdf = PDF::loadView('pdf', compact('dataDiaryQuerys'));
+        
+        foreach($dataDiaryQuerys as $query){
+          $name = $query->nm_project;
+          $date= $query->dt_diary;
+        }
+
+        return $pdf->setPaper('A4')->download($name."-".$date);
     }
 
     /**

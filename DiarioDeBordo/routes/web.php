@@ -8,6 +8,7 @@ use App\Http\Controllers\{
     ProjectController,
     ReminderController
 };
+use App\Models\DiaryModel;
 
 /*
 |--------------------------------------------------------------------------
@@ -42,6 +43,7 @@ Route::get('/document-diary/create', [DiaryController::class, 'create'])->name('
 Route::post('/diary', [DiaryController::class, 'store'])->name('diary.store'); // grava diario de bordo
 Route::get('/historic-diary/{id}', [DiaryController::class, 'historicDiary'])->name('historic_diary.historicDiary'); // exibe meu histórico
 Route::get('diary/{diary_id}',[DiaryController::class, 'show'])->name('diary.show'); // exibe o diary selecionado
+Route::get('/diary/pdf/{diary_id}',[DiaryController::class, 'generationPDF'])->name('diary-pdf.generationPDF');
 
 
 Route::get('/project/create', [ProjectController::class, 'create'])->name('project.create'); // redireciona para rota de criação de projeto
@@ -53,3 +55,4 @@ Route::put('/projetc/{id}',[ProjectController::class, 'update'])->name('project.
 
 Route::delete('/reminder/{id}',[ReminderController::class, 'destroy'])->name('reminder.destroy');
 Route::post('/reminder',[ReminderController::class, 'store'])->name('reminder.store'); // criar um lembrete
+
