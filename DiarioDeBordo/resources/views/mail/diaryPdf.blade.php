@@ -3,7 +3,7 @@
 @endcomponent
 
 @component('mail::message')
-    <h2> Laravel Allyson - Diario de bordo. </h2> 
+    <h2> Laravel Allyson - Diario de projeto. </h2> 
 @endcomponent
 
 @component('mail::panel')
