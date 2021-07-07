@@ -1,9 +1,9 @@
 
  # Gerenciador de Diário de Brodo
  
- ### Site para gerenciar seu **Diário De Bordo**. Totalmente dinâmico e prático de usar.
+ ### Site para gerenciar seu **Diário De Bordo**. 
 Ao criar uma conta, o usuário poderá criar um projeto para pode preencher e enviar um documento de diário de bordo
-com algumas perguntas sobre o andamento do seu projeto. A aplicação trabalha com envio do documento de diário de bordo para um Email especificado pelo usuário ao criar o projeto. Caso o usuário tenha mais de um projeto em aberto, ele poderá especificar qual projeto o documento pertencer no preenchimento do diário. O usuário poderá ter acesso a todo o histórico de envio de diário de bordo, juntamente com a visualização do documento.
+com algumas perguntas sobre o andamento do seu projeto. A aplicação trabalha com envio do documento de diário de bordo para um Email especificado pelo usuário ao criar o projeto. Caso o usuário tenha mais de um projeto em aberto, ele poderá especificar qual projeto o documento pertencer no preenchimento do diário. O usuário poderá ter acesso a todo o histórico de envio do diário de bordo, juntamente com a visualização do documento.
 
 ## Ferramentas 
 1. Framework Laravel
@@ -36,7 +36,8 @@ com algumas perguntas sobre o andamento do seu projeto. A aplicação trabalha c
 ![projetos](https://user-images.githubusercontent.com/58946493/124202057-f802d800-daaf-11eb-882b-47b955c64899.PNG)
 
  ### Página onde exibe todos o histórico de envio de diarios pelo usuário.
-![historico-de-projeto](https://user-images.githubusercontent.com/58946493/124202079-00f3a980-dab0-11eb-949a-9b4a5cd51451.PNG)
+![historico-de-projeto](https://user-images.githubusercontent.com/58946493/124820626-19e2db80-df44-11eb-82fc-f2ef48a5884f.PNG)
+
 
  ### Página de configuração de usuário. 
 ![config](https://user-images.githubusercontent.com/58946493/124202084-018c4000-dab0-11eb-94f1-33a3518475f0.PNG)
