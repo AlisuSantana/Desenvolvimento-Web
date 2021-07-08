@@ -1,13 +1,42 @@
+<style> 
+    *{ font-family: Arial, Helvetica, sans-serif; background-color: azure }
+    
+    .nameProject{
+        text-align: center;
+        padding-bottom: 3px;
+        text-transform: uppercase; 
+    }
+    .date{
+        font-size: 17px;
+        text-align: right;
+        padding: 5px;
+    }
+    .field{
+         word-wrap: normal;
+         text-justify: newspaper;
+         padding-top: 8px;
+         margin-bottom: 3px;
+    }
+    .field-title{
+        font-size: 20px;
+        text-transform: uppercase;         
+    }
+    .card{
+        font-size: 18px;
+        opacity: 0.8;    
+        padding-left: 5px;     
+    }
 
+  </style>  
 
-{{-- @component('mail::message') --}}
+@component('mail::message')
 
     <h2> Laravel Allyson - Diario de projeto. </h2> 
 
     @if ($diary)
         @foreach ($diary as $diary)
 
-            <h1 class="nameProject"> {{ $diary->nm_project }} </h1>
+            <h2 class="nameProject"> {{ $diary->nm_project }} </h2>
 
             <hr>
 
@@ -63,5 +92,5 @@
             
         @endforeach        
     @endif
-{{-- 
-@endcomponent --}}
+
+@endcomponent
