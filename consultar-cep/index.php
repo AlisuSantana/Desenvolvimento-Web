@@ -8,3 +8,7 @@ $search = new Search();
 $response = $search->getAddressFromZipcode('11335000');
 
 print_r($response);
+
+// Para pode usar o pacote, seguer:
+// composer init
+// composer require wead/digital-cep
